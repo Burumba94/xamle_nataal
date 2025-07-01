@@ -1,7 +1,7 @@
 const photographers = [
     { id: 1, name: "Aboubacar GASSAMA", specialty: "Mode & Mariage", img:"/Aboubashr.jpg"},
     { id: 2, name: "Ousmane Diop", specialty: "Paysage & Architecture", img:"/Bura.jpg"},
-    { id: 3, namme: "Alima Gueye", specialty:"Maternity and Children", img:"/photo6.jpg"},
+    { id: 3, name: "Alima Mbaye", specialty: "Maternity & Children", img:"/photo6.jpg"},
     { id: 4, name: "Jeanne Marie", specialty: "Portrait & Art", img:"/IMG_7311.JPG"},
 ];
 

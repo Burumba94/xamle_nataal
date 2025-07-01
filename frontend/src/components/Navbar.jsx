@@ -1,48 +1,51 @@
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import { Link } from 'react-router-dom';
+import { MenuIcon, XIcon } from '@heroicons/react/outline';
 
 const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <nav className="w-full bg-blue-900 text-whited p-4 flex justify-between items-center shadow-md">
-            <h1 className="text-xl font-bold text-gray-300">
-                <Link to="/"> Xamle Nataal </Link>
-            </h1>
+  return (
+    <nav className="bg-[#0a2540] text-white sticky top-0 z-50 shadow-md">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between h-16 items-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/" className="text-2xl font-bold tracking-wide text-white hover:text-green-400">
+              Xamle Nataal
+            </Link>
+          </div>
 
-            <div className="hidden md:flex space-x-6 text-gray-300 p-4 justify-between items-center">
-                <Link to="/" className="hover:text-blue-600"> Acceuil </Link>
-                <Link to="/photographers" className="hover:text-blue-600"> Photographes </Link>
-                <Link to="/events" className="hover:text-blue-600"> Evenements </Link>
-                <Link to="/shop" className="hover:text-blue-600"> Boutique </Link>
-                <Link to="/contact" className="hover:text-blue-600"> Contact </Link>
-            </div>
+          {/* Desktop menu */}
+          <div className="hidden md:flex space-x-6">
+            <Link to="/" className="hover:text-green-400 transition">Accueil</Link>
+            <Link to="/photographes" className="hover:text-green-400 transition">Photographes</Link>
+            <Link to="/events" className="hover:text-green-400 transition">Événements</Link>
+            <Link to="/messages" className="hover:text-green-400 transition">Messages</Link>
+            <Link to="/login" className="bg-green-500 px-4 py-1 rounded hover:bg-green-600 transition">Connexion</Link>
+          </div>
 
-            <div className="hidden md:flex space-x-4">
-                <Link to="/register" className="bg-blue-500 text-white px-4 py-2 rounded"> S'inscrire </Link>
-                <Link to="/login" className="bg-gray-800 text-white px-4 py-2 rounded"> Se connecter </Link>
-            </div>
+          {/* Mobile button */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} aria-label="Menu mobile">
+              {isOpen ? <XIcon className="h-6 w-6 text-white" /> : <MenuIcon className="h-6 w-6 text-white" />}
+            </button>
+          </div>
+        </div>
+      </div>
 
-            <div className="md:hidden">
-                <button onClick={() => setIsOpen(!isOpen)}>
-                    {isOpen ? <XIcon className="w-6 h-6" /> : <MenuIcon className="w-6 h-6" />}
-                </button>
-
-                {isOpen && (
-                    <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center py-4 space-y-4 md:hidden">
-                        <Link to="/" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Accueil</Link>
-                        <Link to="/photographers" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Photographes</Link>
-                        <Link to="/events" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Événements</Link>
-                        <Link to="/shop" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Boutique</Link>
-                        <Link to="/contact" className="hover:text-blue-600" onClick={() => setIsOpen(false)}>Contact</Link>
-                        <Link to="/register" className="bg-blue-500 text-white px-4 py-2 rounded" onClick={() => setIsOpen(false)}> S'inscrire </Link>
-                        <Link to="/login" className="bg-gray-800 text-white px-4 py-2 rounded" onClick={() => setIsOpen(false)}> Se connecter </Link>
-                    </div>
-                )}
-            </div>
-        </nav>
-    );
+      {/* Mobile menu dropdown */}
+      {isOpen && (
+        <div className="md:hidden bg-[#0a2540] px-4 py-4 space-y-3 text-center">
+          <Link to="/" className="block hover:text-green-400">Accueil</Link>
+          <Link to="/photographes" className="block hover:text-green-400">Photographes</Link>
+          <Link to="/events" className="block hover:text-green-400">Événements</Link>
+          <Link to="/messages" className="block hover:text-green-400">Messages</Link>
+          <Link to="/login" className="block bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">Connexion</Link>
+        </div>
+      )}
+    </nav>
+  );
 };
 
 export default Navbar;

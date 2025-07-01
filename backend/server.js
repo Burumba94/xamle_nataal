@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 const authRoute = require('./routes/auth');
 const photoRoute = require('./routes/photo');
+const userRoute= require('./routes/user');
 
 dotenv.config();
 
@@ -14,6 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use('/api/auth', authRoute);
 app.use('/api/photo', photoRoute);
+app.use('/api/users', userRoute)
 app.use(cors({origin: "http://localhost:5173", credentials: true})); // origine du frontend
 
 //routes
