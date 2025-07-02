@@ -8,6 +8,7 @@ import Register from './pages/Register';
 import Photographers from './pages/Photographers';
 import Events from './pages/Events';
 import Shop from './pages/Shop';
+import XamlePro from './pages/XamlePro';
 import './styles/index.css';
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/xamle-pro" element={<XamlePro />} />
         <Route path="/photographers" element={<Photographers />} />
         <Route path="/events" element={<Events />} />
         <Route path="/shop" element={<Shop />} />

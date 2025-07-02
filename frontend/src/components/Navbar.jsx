@@ -22,6 +22,7 @@ const Navbar = () => {
             <Link to="/photographes" className="hover:text-green-400 transition">Photographes</Link>
             <Link to="/events" className="hover:text-green-400 transition">Événements</Link>
             <Link to="/messages" className="hover:text-green-400 transition">Messages</Link>
+            <Link to="/xamle-pro" classname="hover:text-yellow-400 font-semibold transition">Xamle Pro</Link>
             <Link to="/login" className="bg-green-500 px-4 py-1 rounded hover:bg-green-600 transition">Connexion</Link>
           </div>
 
@@ -41,6 +42,7 @@ const Navbar = () => {
           <Link to="/photographes" className="block hover:text-green-400">Photographes</Link>
           <Link to="/events" className="block hover:text-green-400">Événements</Link>
           <Link to="/messages" className="block hover:text-green-400">Messages</Link>
+          <Link to="/xamle-pro" className="block hover:text-yellow-400 font-semibold">Xamle Pro</Link>
           <Link to="/login" className="block bg-green-500 px-4 py-2 rounded hover:bg-green-600 transition">Connexion</Link>
         </div>
       )}
